@@ -1,5 +1,5 @@
 {% set name = "datview" %}
-{% set version = "1.1.0" %}
+{% set version = "1.2.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/datview-{{ version }}.tar.gz
-  sha256: cfc6b19ea6c82e98a47bb43da08216bd0c9fde4ca058d523cb17079448d210d0
+  sha256: 1b54adc3ff96427e1dc6a1817dfb4b5f413564962d3904cb6d9336b19398ded9
 
 build:
   number: 0
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation 
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   entry_points:
     - datview = datview.main:main
 
@@ -21,14 +21,14 @@ requirements:
     - python {{ python_min }}
     - pip
     - setuptools
-    - tk  
+    - tk
   run:
     - python >={{ python_min }}
     - h5py
     - hdf5plugin
     - pillow
     - matplotlib-base
-    - tk        
+    - tk
 
 test:
   imports:
