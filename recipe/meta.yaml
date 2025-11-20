@@ -12,7 +12,7 @@ source:
 build:
   number: 0
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation 
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   entry_points:
     - datview = datview.main:main
 
@@ -21,14 +21,14 @@ requirements:
     - python {{ python_min }}
     - pip
     - setuptools
-    - tk  
+    - tk
   run:
     - python >={{ python_min }}
     - h5py
     - hdf5plugin
     - pillow
     - matplotlib-base
-    - tk        
+    - tk
 
 test:
   imports:
