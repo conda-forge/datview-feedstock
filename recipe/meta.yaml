@@ -1,5 +1,5 @@
 {% set name = "datview" %}
-{% set version = "2.0.1" %}
+{% set version = "2.1.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/datview-{{ version }}.tar.gz
-  sha256: ca5a4a020a158550b7fba2748fe150ab4a9794eaf86451d15a43c2241b8186cf
+  sha256: 016e5e4757beeab6bc41368bdfcc6cfb83978f36e207fa3b2ba06b39002235ea
 
 build:
   number: 0
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation 
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   entry_points:
     - datview = datview.main:main
 
